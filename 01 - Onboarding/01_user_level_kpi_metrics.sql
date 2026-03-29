@@ -1,3 +1,8 @@
+/* Name: User-Level KPI Metrics
+Description: Prepares granular user data for Looker Studio Scorecards. 
+Supports global filtering by app_version.
+Calculates: Completion Rate, Avg Time (Min), Error/Skip Flags, and Total Errors per user.
+*/
 SELECT
   user_id,
   app_version,
