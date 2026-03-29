@@ -1,7 +1,23 @@
 /* Name: User-Level KPI Metrics
-Description: Prepares granular user data for Looker Studio Scorecards. 
-Supports global filtering by app_version.
-Calculates: Completion Rate, Avg Time (Min), Error/Skip Flags, and Total Errors per user.
+DESCRIPTION:
+This query transforms raw event-level data into a granular User-Level dataset. 
+It serves as the primary data source for the Dashboard Scorecards (KPIs), 
+enabling global filtering by 'app_version' while maintaining user-specific context.
+
+METRIC LOGIC:
+1. is_complete: A binary flag (false/true) identifying users who successfully 
+   finished the tutorial (step 8). Used to calculate global Completion Rate.
+2. completion_time_minutes: Extracts the total duration only for successful 
+   conversions, converted to minutes for business readability.
+3. Behavioral Flags (had_error, did_skip): Boolean markers used to segment 
+   the user base into "Smooth" vs. "Struggling" onboarding experiences.
+4. total_errors: A count of all error events encountered by each user, 
+   allowing for distribution analysis and outlier detection.
+
+DATA GRANULARITY:
+- Aggregated by 'user_id' and 'app_version'.
+- Supports high-performance filtering in Looker Studio without re-scanning 
+  the entire raw events table.
 */
 SELECT
   user_id,
