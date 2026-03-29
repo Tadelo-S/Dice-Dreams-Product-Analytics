@@ -1,4 +1,4 @@
-📊 User Onboarding Tutorial Analysis: Data Layer
+#📊 User Onboarding Tutorial Analysis: Data Layer
 This folder contains the SQL logic used to transform raw event data into a structured data layer for the Tutorial Performance Dashboard in Looker Studio.
 
 📁 Repository Structure
