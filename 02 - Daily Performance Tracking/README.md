@@ -3,7 +3,7 @@
 This folder contains the core ETL processes and transformation logic designed to monitor game health and player behavior. These queries aggregate raw transactional data into high-performance summary tables ready for the Executive Dashboard.
 
 Data Workflow
-
+```mermaid
 graph TD
     A[(Raw Fact Data)] --> B[ETL Processing]
     B --> C[agg_daily_performance]
@@ -12,7 +12,7 @@ graph TD
     C --> F((Executive Dashboard))
     D --> F
     E --> F
-
+```
 
 ## Repository Structure
 
