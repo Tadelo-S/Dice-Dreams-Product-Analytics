@@ -1,16 +1,19 @@
 /* Name: player_retention_cohorts.sql
 DESCRIPTION: 
-This query calculates Day-N retention cohorts, defining the "Install Date" as the user's 
-first appearance in the dataset. It tracks player return rates over specific industry-standard 
-milestones (Day 1-7, 14, 28, 60).
+This query calculates Day-N retention cohorts within the Business-Analytics-Sandbox, 
+defining the "Install Date" as the user's first appearance in the dataset. 
+It materializes the results into the `agg_retention_cohorts` table to track player 
+return rates over industry-standard milestones (Day 1-7, 14, 28, 60).
 
 TECHNICAL HIGHLIGHTS:
-1. DYNAMIC TIME-SHIFTING: Implements a dynamic offset logic using CURRENT_DATE() to align 
+1. DATA WAREHOUSING: Creates a persistent summary table in the `final_project` schema, 
+   optimized for cohort analysis and high-performance BI filtering.
+2. DYNAMIC TIME-SHIFTING: Implements a dynamic offset logic using CURRENT_DATE() to align 
    historical data with the present day, ensuring a "live" dashboard experience.
-2. PERFORMANCE OPTIMIZATION: Pre-aggregates daily active users (DAU) to 'User-Day' grain 
-   before joining, significantly reducing processing costs for large-scale datasets (15.8M+ rows).
-3. COHORT NORMALIZATION: Utilizes Window Functions (MAX OVER PARTITION) to calculate 
-   the baseline cohort size, enabling seamless percentage calculations in the BI layer.
+3. PERFORMANCE OPTIMIZATION: Pre-aggregates daily active users (DAU) to 'User-Day' grain 
+   before joining, significantly reducing processing costs for large-scale datasets.
+4. COHORT NORMALIZATION: Utilizes Window Functions (MAX OVER PARTITION) to calculate 
+   the baseline cohort size, enabling seamless percentage calculations in the visualization layer.
 
 LOGIC STEPS:
 1. Time_Constants: Calculates the daily offset between the dataset's max date and today.
@@ -19,19 +22,18 @@ LOGIC STEPS:
 4. Ret_temp: Calculates 'day_in_game' via DATE_DIFF and aggregates daily user counts.
 5. Final Select: Filters for high-impact retention days and derives the cohort baseline.
 */
+CREATE OR REPLACE TABLE `Project-ID.final_project.agg_retention_cohorts` AS
 WITH
   Time_Constants AS (
     SELECT DATE_DIFF(CURRENT_DATE(), DATE(MAX(time)), DAY) AS offset
-    FROM `ppltx-ba-course.gamepltx.fact`
+    FROM `Business-Analytics-Sandbox.gamepltx.fact`
   ),
   Installs AS (
-    SELECT
-      user_id,
-      DATE_ADD(
-        MIN(DATE(time)), INTERVAL (SELECT offset FROM Time_Constants) DAY)
-        AS install_date
-    FROM `ppltx-ba-course.gamepltx.fact`
-    GROUP BY ALL
+  SELECT 
+    user_id,
+    DATE_ADD(DATE(time), INTERVAL (SELECT offset FROM Time_Constants) DAY) AS install_date
+  FROM `Business-Analytics-Sandbox.gamepltx.fact`
+  QUALIFY ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY DATE(time) ASC) = 1
   ),
   DAU AS (
     SELECT
@@ -39,7 +41,7 @@ WITH
       DATE_ADD(
         DATE(time), INTERVAL (SELECT offset FROM Time_Constants) DAY)
         AS date
-    FROM `ppltx-ba-course.gamepltx.fact`
+    FROM `Business-Analytics-Sandbox.gamepltx.fact`
     GROUP BY ALL
   ),
   Ret_temp AS (
@@ -50,6 +52,7 @@ WITH
     FROM Installs
     JOIN DAU
       USING (user_id)
+      WHERE DAU.date >= Installs.install_date
   ),
   Ret_temp2 AS (
     SELECT
