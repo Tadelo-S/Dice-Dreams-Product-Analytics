@@ -1,6 +1,7 @@
 # 02 - Daily Performance Tracking
 This folder contains the core ETL processes and transformation logic designed to monitor game health and player behavior. These queries form the backbone of the Executive Dashboard, aggregating raw transactional data into high-performance summary tables ready for BI visualization.
 ## Data Workflow
+
 ```mermaid
 graph TD
     A[(Raw Fact Data)] --> B[ETL Processing]
