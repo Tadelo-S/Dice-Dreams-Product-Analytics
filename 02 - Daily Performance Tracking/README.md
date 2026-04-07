@@ -1,16 +1,5 @@
 # 02 - Daily Performance Tracking
 This folder contains the core ETL processes and transformation logic designed to monitor game health and player behavior. These queries form the backbone of the Executive Dashboard, aggregating raw transactional data into high-performance summary tables ready for BI visualization.
-## Data Workflow
-
-```mermaid
-graph TD
-    A[(Raw Fact Data)] --> B[ETL Processing]
-    B --> C[agg_daily_performance]
-    B --> D[agg_product_monetization]
-    B --> E[agg_retention_cohorts]
-    C --> F((Executive Dashboard))
-    D --> F
-    E --> F
 
 ## Overview
 The goal of this directory is to centralize the logic for key performance indicators (KPIs), allowing for scalable data analysis and efficient reporting without requiring heavy computation at the visualization layer.
@@ -36,12 +25,15 @@ Purpose: Tracks long-term player engagement and health.
 Key Logic: Computes Day-N retention cohorts based on the user's first-touch (install) date.
 
 Key Feature: Employs Performance Optimization techniques by pre-aggregating data to a 'User-Day' grain, enabling efficient tracking of return rates at standard milestones (Day 1-7, 14, 28, 60).
-mermaid 
-'graph TD
+
+## Data Workflow
+
+```mermaid
+graph TD
     A[(Raw Fact Data)] --> B[ETL Processing]
     B --> C[agg_daily_performance]
     B --> D[agg_product_monetization]
     B --> E[agg_retention_cohorts]
     C --> F((Executive Dashboard))
     D --> F
-    E --> F'
+    E --> F
