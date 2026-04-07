@@ -1,8 +1,8 @@
-# 📊 User Onboarding Tutorial Analysis: Data Layer
+#  User Onboarding Tutorial Analysis: Data Layer
 
 This folder contains the SQL logic used to transform raw event data into a structured data layer for the **Tutorial Performance Dashboard** in Looker Studio.
 
-## 📁 Repository Structure
+## Repository Structure
 
 The data transformation is divided into three specialized SQL scripts, each serving a unique role in the dashboard architecture:
 
@@ -29,12 +29,8 @@ The data transformation is divided into three specialized SQL scripts, each serv
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Database:** Google BigQuery
 * **Visualization:** Looker Studio
 * **SQL Dialect:** Standard SQL
 
-## 💡 Analytical Highlights
-* **Friction Separation:** By categorizing errors into 'User' vs 'App' types, we can distinguish between poor UX design and technical instability.
-* **Weighted Metrics:** Error and time averages are weighted by the starting population to ensure fair comparison between versions with different drop-off rates.
-* **Data Integrity:** Implemented `DISTINCT` counting and conditional aggregation to prevent double-counting in multi-event user sessions.
