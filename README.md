@@ -1,23 +1,46 @@
-# Dice Dreams Product Analytics Project
+# Gaming Analytics Portfolio: From Raw Events to Executive Insights
+
 ## Project Overview
-This project focuses on analyzing player behavior and economy in "Dice Dreams". It covers the entire analytical lifecycle: from defining event taxonomy to building SQL-based data models and interactive dashboards.
+This project demonstrates a complete Data Analytics pipeline in the Gaming industry. Using a synthetic gaming dataset, I have modeled raw event data into structured layers to track user behavior, monetization, and tutorial performance.
 
-## Project Structure
-00 - Strategy: Includes the Tracking Plan and the project's analytical framework (Deep Dive).
+The goal is to provide stakeholders with actionable insights through automated SQL transformations and interactive BI dashboards.
 
-01 - Onboarding (Tutorial) Analysis: SQL queries designed to analyze the First Time User Experience (FTUE) and identify funnel friction points.
+---
 
-02 - Daily Performance Tracking: Data modeling for key KPIs (Retention, Monetization, Village Progression).
+## 🚀 Live Dashboards (Quick Links)
+Get straight to the results. Access the interactive Looker Studio reports here:
+* 📊 **[Onboarding & Tutorial Analysis Dashboard](https://lookerstudio.google.com/reporting/ed7aa2d5-3958-467d-b06e-51a1e4c35546/page/tEnnC)** – Focuses on FTUE (First-Time User Experience) and friction points.
+* 📈 **[Executive Daily Performance Dashboard](https://lookerstudio.google.com/reporting/27e87884-08a2-4349-adc4-f32a37623407)** – Monitors DAU, Revenue, and In-game Economy health.
 
-03 - Visual Insights: Screenshots of the interactive dashboards built in Looker.
+---
 
+## 📂 Project Structure
 
-## Key Technical Skills
-**SQL (BigQuery):** 
-Developed SQL-based data models utilizing CTEs, window functions, and  joins to transform raw event data into aggregated business layers.
+### [00 - Documentation & Setup](./00%20-%20Documentation%20%26%20Setup)
+Contains the technical foundation of the project, including the **Data Dictionary** and the **ERD (Entity Relationship Diagram)** defining the synthetic dataset.
 
-**BI Visualization (Looker):** 
-Designed and deployed multi-page interactive dashboards, translating complex data models into actionable product insights.
+### [01 - Onboarding](./01%20-%20Onboarding)
+Focuses on the **Tutorial Performance Analysis**.
+* **Key Logic:** Funnel completion rates, error mapping (UX vs. Technical), and version benchmarking.
+* **Tech:** BigQuery SQL (User-level aggregation).
 
-**Data Strategy:**
-Defined event taxonomy, attributes, and tracking requirements (documented in the Tracking Plan).
+### [02 - Daily Performance](./02%20-%20Daily%20Performance)
+The core **Data Layer** for game health monitoring.
+* **Key Logic:** DAU/ARPU calculations, Monetization breakdown by product group, and Retention cohorts (D1, D7, D30).
+* **Tech:** BigQuery SQL (ETL & Summary tables).
+
+### [03 - Visual Dashboards](./03%20-%20Visual%20Dashboards)
+The visualization layer showcasing the final reports.
+* **Contents:** Screenshots of core dashboard pages and direct access links.
+* **Tech:** Looker Studio.
+
+---
+
+## 🛠️ Tech Stack
+* **Storage & Analysis:** Google BigQuery (Standard SQL)
+* **Visualization:** Looker Studio
+* **Data Modeling:** Star Schema (Fact & Dimension approach)
+* **Documentation:** Mermaid.js (Workflows)
+
+## 📧 Contact
+If you have any questions about the logic or the architecture of this project, feel free to reach out!
