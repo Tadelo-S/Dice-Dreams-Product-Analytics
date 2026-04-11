@@ -6,18 +6,17 @@ This folder showcases the final visualization layer of the project. These dashbo
 ## 🖼️ Dashboard Screenshots
 This folder contains high-resolution previews of the core analytical views:
 
-1. **Onboarding_Funnel.png**
+1. **[Onboarding_Conversion.png](Onboarding_Conversion.png)**
    * A deep dive into the First-Time User Experience (FTUE).
    * Focuses on the tutorial funnel, identifying drop-off points, and benchmarking version performance.
 
-2. **Gaming_Performance.png**
+2. **[Gaming_Performance.png](Gaming_Performance.png)**
    * The primary "Executive Summary" view.
    * Tracks daily health metrics including DAU, Revenue trends, and New User acquisitions.
 
-3. **Product_Monetization.png**
+3. **[Product_Monetization.png](Product_Monetization.png)**
    * A detailed breakdown of the in-game economy.
    * Analyzes revenue by product type and maps monetization against player progression (Kingdom levels).
-
 ---
 
 ## 🔗 Live Interactive Dashboards
