@@ -17,7 +17,7 @@ Get straight to the results. Access the interactive Looker Studio reports here:
 ## 📂 Project Structure
 
 ### [00 - Documentation & Setup](./00%20-%20Documentation%20%26%20Setup)
-Contains the technical foundation of the project, including the **Data Dictionary** and the **ERD (Entity Relationship Diagram)** defining the synthetic dataset.
+Defines the strategic product framework, featuring a deep-dive analysis of Dice Dreams' taxonomy and a feature specification with A/B test modeling.
 
 ### [01 - Onboarding](./01%20-%20Onboarding)
 Focuses on the **Tutorial Performance Analysis**.
