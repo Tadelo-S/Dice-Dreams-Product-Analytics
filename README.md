@@ -7,14 +7,14 @@ The goal is to provide stakeholders with actionable insights through automated S
 
 ---
 
-## 🚀 Live Dashboards (Quick Links)
+## Live Dashboards (Quick Links)
 Get straight to the results. Access the interactive Looker Studio reports here:
 * 📊 **[Onboarding & Tutorial Analysis Dashboard](https://lookerstudio.google.com/reporting/ed7aa2d5-3958-467d-b06e-51a1e4c35546/page/tEnnC)** – Focuses on FTUE (First-Time User Experience) and friction points.
 * 📈 **[Executive Daily Performance Dashboard](https://lookerstudio.google.com/reporting/27e87884-08a2-4349-adc4-f32a37623407)** – Monitors DAU, Revenue, and In-game Economy health.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ### [00 - Documentation & Setup](./00%20-%20Documentation%20%26%20Setup)
 Defines the strategic product framework, featuring a deep-dive analysis of Dice Dreams' taxonomy and a feature specification with A/B test modeling.
@@ -36,7 +36,7 @@ The visualization layer showcasing the final reports.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Storage & Analysis:** Google BigQuery (Standard SQL)
 * **Visualization:** Looker Studio
 
