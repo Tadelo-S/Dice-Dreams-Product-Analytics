@@ -6,7 +6,7 @@ This folder showcases the final visualization layer of the project. These dashbo
 ## 🖼️ Dashboard Screenshots
 This folder contains high-resolution previews of the core analytical views:
 
-1. **Onboarding_Conversion.png**
+1. **Onboarding_Funnel.png**
    * A deep dive into the First-Time User Experience (FTUE).
    * Focuses on the tutorial funnel, identifying drop-off points, and benchmarking version performance.
 
