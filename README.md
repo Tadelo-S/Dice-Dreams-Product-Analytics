@@ -39,8 +39,4 @@ The visualization layer showcasing the final reports.
 ## 🛠️ Tech Stack
 * **Storage & Analysis:** Google BigQuery (Standard SQL)
 * **Visualization:** Looker Studio
-* **Data Modeling:** Star Schema (Fact & Dimension approach)
-* **Documentation:** Mermaid.js (Workflows)
 
-## 📧 Contact
-If you have any questions about the logic or the architecture of this project, feel free to reach out!
