@@ -1,11 +1,11 @@
 # 02 - Daily Performance Tracking: Data Layer
 
-This folder contains the core ETL processes and transformation logic designed to monitor game health and player behavior. These queries aggregate raw transactional data into high-performance summary tables ready for the Executive Dashboard.
+This folder contains the core ETL processes and transformation logic designed to monitor game health and player behavior. These queries aggregate raw synthetic event data into high-performance summary tables ready for the Executive Dashboard.
 
 ## Data Workflow
 ```mermaid
 graph TD
-    A[(Raw Fact Data)] --> B[ETL Processing]
+    A[(Raw Event Data)] --> B[SQL Transformation]
     B --> C[agg_daily_performance]
     B --> D[agg_product_monetization]
     B --> E[agg_retention_cohorts]
@@ -61,3 +61,4 @@ The data transformation is divided into three specialized SQL scripts, each serv
 * **Visualization:** Looker Studio
 
 * **SQL Dialect:** Standard SQL
+* **Data Source:** Synthetic Gaming Dataset
