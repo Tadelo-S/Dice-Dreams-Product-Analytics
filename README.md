@@ -3,7 +3,7 @@
 ## Project Overview
 This project demonstrates a complete Data Analytics pipeline in the Gaming industry. Using a synthetic gaming dataset, I have modeled raw event data into structured layers to track user behavior, monetization, and tutorial performance.
 
-The goal is to provide stakeholders with actionable insights through automated SQL transformations and interactive BI dashboards.
+The goal is to provide stakeholders with actionable insights through SQL transformations and interactive BI dashboards.
 
 ---
 
