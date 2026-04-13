@@ -24,7 +24,7 @@ Focuses on the **Tutorial Performance Analysis**.
 * **Key Logic:** Funnel completion rates, error mapping (UX vs. Technical), and version benchmarking.
 * **Tech:** BigQuery SQL (User-level aggregation).
 
-### [02 - Daily Performance](./02%20-%20Daily%20Performance)
+### [02 - Daily Performance Tracking](./02%20-%20Daily%20Performance%20Tracking)
 The core **Data Layer** for game health monitoring.
 * **Key Logic:** DAU/ARPU calculations, Monetization breakdown by product group, and Retention cohorts (D1, D7, D30).
 * **Tech:** BigQuery SQL (ETL & Summary tables).
