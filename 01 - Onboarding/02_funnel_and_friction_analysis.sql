@@ -47,7 +47,7 @@ SELECT
     2) AS AVG_app_errors,
   ROUND(AVG(IFNULL(time_spent, 0) + IFNULL(recovery_time, 0)), 2)
     AS avg_total_step_time
-FROM `ppltx-ba-course.final_project.tutorial`
+FROM `*****.tutorial`
 WHERE
   (step_index BETWEEN 0 AND 8 OR from_step BETWEEN 0 AND 8)
   AND (step_index IS NOT NULL OR from_step IS NOT NULL)
