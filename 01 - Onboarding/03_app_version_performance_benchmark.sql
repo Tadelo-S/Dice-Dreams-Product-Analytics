@@ -41,6 +41,6 @@ SELECT
           WHEN event_type = 'tutorial_ended' AND completed = TRUE THEN user_id
           END)),
     2) AS AVG_Completion_Time
-FROM `ppltx-ba-course.final_project.tutorial`
+FROM `*****.tutorial`
 GROUP BY ALL
 ORDER BY 1 DESC
