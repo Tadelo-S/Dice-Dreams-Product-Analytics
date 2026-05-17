@@ -36,5 +36,5 @@ SELECT
   MAX(CASE WHEN event_type = 'tutorial_step_skip' THEN 1 ELSE 0 END)
     AS did_skip,
   COUNT(CASE WHEN event_type = 'tutorial_error' THEN 1 END) AS total_errors
-FROM `ppltx-ba-course.final_project.tutorial`
+FROM `****.tutorial`
 GROUP BY ALL
